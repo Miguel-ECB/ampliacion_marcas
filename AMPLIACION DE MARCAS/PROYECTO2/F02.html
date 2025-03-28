@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="utilidades1.js"></script>
+<script>
+    function cargarDatos() {
+        setValue("sResulNombre", getValue("sNombre"));
+        setValue("sResulApellido", getValue("sApellido"));
+    }
+</script>
+</head>
+<body onload="cargarDatos()">
+
+    <div>
+        El nombre que ha viajado es:
+        <input type="text" name="sResulNombre">
+    </div>
+    <div>
+     Y el apellido es:
+        <input type="text" name="sResulApellido">
+    </div>
+   CREAR F03 QUE PASEN NOMBRE, APELLIDO Y UN TELEFONO QUE SE INTRODUCE POR PRIMERA VEZ EN F02 
+</body>
+</html>

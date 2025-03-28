@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentIndex = 0;
+      
+        function moveSlide(direction) {
+          const slider = document.querySelector('.slider-neon');
+          const slides = slider.children.length;
+          currentIndex = (currentIndex + direction + slides) % slides;
+          slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+      </script>
+    
+    <style>
+        body {
+            background-image: url(imagenes/Zona\ de\ Juegos.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 8vw; 
+            color: white;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .btn-custom {
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 0px;
+        }
+
+        .cuadro-texto {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 5px;
+            margin: 50px auto;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .btn-group {
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .slider-container-neon {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    border: 4px solid transparent;
+    border-image: linear-gradient(45deg, #ff00ff, #00ffff) 1; 
+    border-radius: 10px;
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
+  }
+
+  
+  .slider-neon {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+
+  .slider-neon img {
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff; 
+  }
+
+ 
+  .prev-neon, .next-neon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-size: 2rem;
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, #ff00ff, #00ffff) 1; 
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .prev-neon:hover, .next-neon:hover {
+    transform: scale(1.2); 
+    box-shadow: 0 0 25px #ff00ff, 0 0 50px #00ffff;
+  }
+
+  .prev-neon {
+    left: 15px;
+  }
+
+  .next-neon {
+    right: 15px;
+  }
+        
+       
+ @media (max-width: 576px) {
+            .cuadro-texto {
+                font-size: 1rem; 
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 20vw; 
+            }
+
+            .neon-card {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>ARCADIA NEON</h1>
+
+    <div class="top-center">
+        <div class="btn-group" role="group" aria-label="Grupo básico de botones de enlaces">
+            <a href="inicio.html" class="btn btn-dark btn-custom" role="button">Bienvenida</a>
+            <a style="color: rgb(136, 0, 255);" href="zjuegos.html" class="btn btn-dark btn-custom" role="button">Zona de Juegos</a>
+            <a href="zcocteles.html" class="btn btn-dark btn-custom" role="button">Zona de Cócteles</a>
+            <a href="zbaños.html" class="btn btn-dark btn-custom" role="button">Zona de Baños</a>
+            <a href="zterror.html" class="btn btn-dark btn-custom" role="button">Zona de Terror</a>
+            <a href="zchill.html" class="btn btn-dark btn-custom" role="button">Zona Chill</a>
+            <a href="zvip.html" class="btn btn-dark btn-custom" role="button">Zona VIP</a>
+            <a href="zmusical.html" class="btn btn-dark btn-custom" role="button">Zona Musical</a>
+            <a href="zfotos.html" class="btn btn-dark btn-custom" role="button">Zona de Fotos</a>
+        </div>
+    </div>
+
+    <div class="cuadro-texto container">
+        ¿Te atreves a desafiar tus habilidades? Arcadia Neón es la zona de juegos más épica que hayas visto. Desde máquinas retro hasta consolas de última generación, esta es la tierra prometida para los jugadores. Con luces brillantes y música envolvente, cada partida se convierte en una aventura. ¡Demuestra que eres el rey de los juegos y gana grandes premios mientras te rodeas de pura energía neon!
+    </div>
+    <div class="slider-container-neon">
+        <div class="slider-neon">
+          <img src="imagenes/Pool.jpeg" alt="Imagen 1">
+          <img src="imagenes/Maquinas.jpeg" alt="Imagen 2">
+          <img src="imagenes/Cartas.jpeg" alt="Imagen 3">
+          <img src="imagenes/Domino.jpeg" alt="Imagen 4">
+        </div>
+        <button class="prev-neon" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next-neon" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+
+   
+
+</body>
+</html>

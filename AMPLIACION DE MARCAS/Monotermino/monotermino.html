@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cartel">
+    <title>NEOPREGUNTAS</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #2e1a2a, #600f60);
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background: linear-gradient(135deg, #2e1a2a, #600f60); }
+            50% { background: linear-gradient(135deg, #600f60, #2e1a2a); }
+            100% { background: linear-gradient(135deg, #2e1a2a, #600f60); }
+        }
+
+        .cartel {
+            background-image: url(imagenes/pared.jpg);
+            border: 10px solid #000000;
+            box-shadow: 0 0 20px #000000, 0 0 40px #000000;
+            padding: 20px;
+            margin: 50px auto;
+            max-width: 800px;
+            text-align: center;
+            animation: borderGlow 5s infinite alternate;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        @keyframes borderGlow {
+            0% { border-color: #000000; box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700; } 
+            50% { border-color: #000000; box-shadow: 0 0 20px #1E90FF, 0 0 40px #1E90FF; } 
+            100% { border-color: #000000; box-shadow: 0 0 20px #FF0000, 0 0 40px #FF0000; } 
+        }
+
+        .cartel h1 {
+            font-family: 'Impact', sans-serif;
+            font-size: 3.5rem; 
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+            margin-bottom: 30px;
+            animation: textGlow 2s infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700; } 
+            50% { text-shadow: 0 0 10px #1E90FF, 0 0 20px #1E90FF, 0 0 30px #1E90FF; } 
+            100% { text-shadow: 0 0 10px #FF0000, 0 0 20px #FF0000, 0 0 30px #FF0000; } 
+        }
+
+        .pregunta {
+            font-family: 'Impact', sans-serif;
+            font-size: 1.8rem; 
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 20px;
+            color: #ffffff; 
+            text-shadow: 0 0 50px #FF0000; 
+        }
+
+        .respuesta {
+            font-family: 'Impact', sans-serif;
+            font-size: 2rem; 
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #FFD700; 
+            margin-top: 10px;
+            opacity: 1; 
+        }
+
+        .imagen {
+            width: 150px; 
+            height: 150px; 
+            margin: 20px auto;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #FFD700; 
+            box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: imageGlow 2s infinite alternate;
+        }
+
+        @keyframes imageGlow {
+            0% { box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700; } 
+            50% { box-shadow: 0 0 10px #1E90FF, 0 0 20px #1E90FF; } 
+            100% { box-shadow: 0 0 10px #FF0000, 0 0 20px #FF0000; } 
+        }
+
+        .imagen:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700; 
+        }
+
+       
+        .imagen.html {
+            background-image: url(imagenes/html.png);
+        }
+        .imagen.bootstrap {
+            background-image: url(imagenes/bootstrap.png);
+        }
+        .imagen.DOM {
+            background-image: url(imagenes/dom.png);
+        }
+        .imagen.res {
+            background-image: url(imagenes/RESPONSIVIDAD.png);
+        }
+        .imagen.array {
+            background-image: url(imagenes/array.png);
+        }
+
+       
+        @media (max-width: 768px) {
+            .cartel h1 {
+                font-size: 2.5rem;
+            }
+            .pregunta {
+                font-size: 1.5rem;
+            }
+            .respuesta {
+                font-size: 1.8rem;
+            }
+            .imagen {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cartel">
+        <h1>NEOPREGUNTAS</h1>
+        <div class="pregunta">Si quiero definir un título en una página web ¿Qué debo usar?</div>
+        <div class="imagen html" alt="Logo de HTML"></div>
+        <div class="respuesta">title</div>
+
+        <div class="pregunta">¿El framework más usado por los programadores para hacer diseños rápidos y responsivos es?</div>
+        <div class="imagen bootstrap" alt="Logo de Bootstrap"></div>
+        <div class="respuesta">bootstrap</div>
+
+        <div class="pregunta">¿Con qué palabra se determina un documento en HTML?</div>
+        <div class="imagen DOM" alt="Logo de Dom"></div>
+        <div class="respuesta">DOM</div>
+
+        <div class="pregunta">¿Qué es lo que permite a un sitio web ser accesible desde dispositivos móviles?</div>
+        <div class="imagen res" alt="Logo de res"></div>
+        <div class="respuesta">Responsividad</div>
+
+        <div class="pregunta">Al representar una secuencia de elementos ordenados ¿Qué estructura de datos se utiliza?</div>
+        <div class="imagen array" alt="script"></div>
+        <div class="respuesta">Array</div>
+    </div>
+</body>
+</html>

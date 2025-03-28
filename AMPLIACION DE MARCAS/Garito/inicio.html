@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-image: url('imagenes/Inicio.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 10vw;
+            color: white;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .btn-custom {
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 0px;
+        }
+
+        .cuadro-texto {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 5px;
+            margin: 50px auto;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .btn-group {
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .neon-card {
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid transparent;
+            border-image: linear-gradient(45deg, #ff00ff, #00ffff) 1;
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
+        }
+
+        .neon-card .card-header {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ff00e1;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 1px solid #00ffff;
+        }
+
+        .neon-card:hover {
+            box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
+            transform: scale(1.05);
+            transition: 0.3s ease-in-out;
+        }
+
+        .container-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+       
+        @media (max-width: 576px) {
+            .cuadro-texto {
+                font-size: 1rem; 
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 20vw; 
+            }
+
+            .neon-card {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>VIBEWAVE</h1>
+
+    <div class="top-center">
+        <div class="btn-group" role="group" aria-label="Grupo básico de botones de enlaces">
+            <a style="color: aqua;" href="inicio.html" class="btn btn-dark btn-custom" role="button">Bienvenida</a>
+            <a href="zjuegos.html" class="btn btn-dark btn-custom" role="button">Zona de Juegos</a>
+            <a href="zcocteles.html" class="btn btn-dark btn-custom" role="button">Zona de Cócteles</a>
+            <a href="zbaños.html" class="btn btn-dark btn-custom" role="button">Zona de Baños</a>
+            <a href="zterror.html" class="btn btn-dark btn-custom" role="button">Zona de Terror</a>
+            <a href="zchill.html" class="btn btn-dark btn-custom" role="button">Zona Chill</a>
+            <a href="zvip.html" class="btn btn-dark btn-custom" role="button">Zona VIP</a>
+            <a href="zmusical.html" class="btn btn-dark btn-custom" role="button">Zona Musical</a>
+            <a href="zfotos.html" class="btn btn-dark btn-custom" role="button">Zona de Fotos</a>
+        </div>
+    </div>
+
+    <div class="cuadro-texto container">
+        ¡Has llegado al lugar donde las luces nunca se apagan y la diversión no tiene límites! En VIBEWAVE, cada rincón brilla con neón y la noche se transforma en una experiencia única. Ya sea que busques relajarte con un cóctel, desafiar a tus amigos en los juegos, o sumergirte en una atmósfera de terror, tenemos algo para todos. Prepárate para vivir una experiencia multisensorial que te hará vibrar. ¡Bienvenido a tu nuevo garito favorito!
+    </div>
+
+    <div class="container-center">
+        <div class="card mb-3 neon-card" style="max-width: 100%;">
+            <div class="card-header">RESEÑAS</div>
+            <div class="card-body">
+                <h4 class="card-title">Dorian Santiago ⭐⭐⭐⭐⭐</h4>
+                <p class="card-text">
+                  ¡Increíble ambiente! Las luces neón y la música crean una vibra única. Los cócteles son deliciosos, ¡volveré seguro!
+                </p>
+                <h4 class="card-title">Juan Diego ⭐⭐⭐⭐⭐</h4>
+                <p class="card-text">
+                  Un lugar genial para pasar la noche. La decoración con neón es espectacular y la atención fue muy buena. ¡Muy recomendable!
+                </p>
+                <h4 class="card-title">Raul del Valle ⭐⭐⭐⭐⭐</h4>
+                <p class="card-text">
+                  La mejor experiencia nocturna. Ambiente vibrante, música electrónica perfecta y cócteles únicos. ¡Definitivamente mi nuevo lugar favorito!
+                </p>
+                <h4 class="card-title">Carlos Sastre ⭐⭐⭐</h4>
+                <p class="card-text">
+                  Buena atmósfera, pero el servicio lento. El lugar tiene una decoración genial y la música está buenísima, pero tardaron un poco en servirnos.
+                </p>
+                <h4 class="card-title">Matías Ariel ⭐⭐⭐</h4>
+                <p class="card-text">
+                  La música es increíble, pero el espacio es pequeño. El ambiente es muy divertido y la música es top, aunque el bar se llena rápido, lo que hace que sea difícil moverse.
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

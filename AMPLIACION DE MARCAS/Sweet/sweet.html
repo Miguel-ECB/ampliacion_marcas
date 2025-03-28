@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMBINACIONES</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="icon" type="image/png" href="imagenes/favicon.png">
+    <style>
+        body {
+            font-family: 'Impact', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        #explicacionBtn {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #8a2be2;
+            background-color: transparent;
+            border: 2px solid #8a2be2;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            animation: brilloNeon 1.5s infinite alternate;
+        }
+
+        @keyframes brilloNeon {
+            0% {
+                box-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 20px #8a2be2, 0 0 40px #8a2be2;
+            }
+            100% {
+                box-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2, 0 0 40px #8a2be2, 0 0 80px #8a2be2;
+            }
+        }
+
+        #explicacionBtn:hover {
+            background-color: #8a2be2;
+            color: #000;
+            animation: none;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #8a2be2, #000, #8a2be2, #000);
+            background-size: 400% 400%;
+            z-index: -1;
+            animation: animacionFondo 10s ease infinite;
+        }
+
+        @keyframes animacionFondo {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .swal2-popup {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #c800ff;
+            border-radius: 10px;
+            animation: brilloBorde 1.5s infinite alternate;
+            font-family: 'Impact', sans-serif;
+            background: transparent !important;
+            width: 101% !important;
+            height: 100% !important;
+            max-width: none !important;
+            max-height: none !important;
+            margin: 10px !important;
+            padding: -5px !important;
+        }
+
+        @keyframes brilloBorde {
+            0% {
+                border-color: #8a2be2;
+                box-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 20px #8a2be2, 0 0 40px #8a2be2;
+            }
+            100% {
+                border-color: #4b0082;
+                box-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2, 0 0 40px #8a2be2, 0 0 80px #8a2be2;
+            }
+        }
+
+        .swal2-html-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px;
+            height: calc(100% - 20px);
+            overflow-y: auto;
+        }
+
+        .swal2-background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .swal2-icon {
+            display: none !important;
+        }
+
+        .carta {
+            width: 89px;
+            height: auto;
+            margin: -1px;
+            filter: drop-shadow(0 0 5px #00ff00);
+            animation: brilloCarta 2s infinite alternate;
+        }
+
+        @keyframes brilloCarta {
+            0% {
+                filter: drop-shadow(0 0 5px #00ff00);
+            }
+            100% {
+                filter: drop-shadow(0 0 20px #00ff00);
+            }
+        }
+
+        .fila {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .columna {
+            flex: 1;
+            text-align: center;
+            margin: 0 5px;
+        }
+
+        .columna p {
+            margin: 5px 0;
+            font-size: 17px;
+        }
+
+        .columna p strong {
+            color: #00fbff;
+            text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2;
+        }
+
+        .columna p span {
+            color: #00ff00;
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+        }
+
+        .swal2-confirm {
+            padding: 1px 100px;
+            font-size: 15px;
+            color: #fff;
+            background-color: transparent;
+            border: 2px solid #00ff00;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            animation: brilloNeonVerde 1.5s infinite alternate;
+            margin: 0 !important;
+        }
+
+        @keyframes brilloNeonVerde {
+            0% {
+                box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00;
+            }
+            100% {
+                box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00;
+            }
+        }
+
+        .swal2-confirm:hover {
+            background-color: #00ff00;
+            color: #000;
+            animation: none;
+        }
+
+        .swal2-actions {
+            padding: 0px !important;
+            margin: 0 !important;
+        }
+
+        @media (max-width: 768px) {
+            .carta {
+                width: 50px;
+            }
+            .columna p {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <button id="explicacionBtn" class="btn">COMBINACIONES</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <audio id="beepSound" src="imagenes/beep.mp3"></audio>
+    <script>
+        document.getElementById('explicacionBtn').addEventListener('click', function() {
+            document.getElementById('beepSound').play();
+            Swal.fire({
+                html: `
+                    <div>
+                        <div class="fila">
+                            <div class="columna">
+                                <p><strong>PAREJA (nombre):</strong> <span>2 puntos</span></p>
+                                <img src="imagenes/pareja1.png" alt="Pareja 1" class="carta">
+                                <img src="imagenes/pareja2.png" alt="Pareja 2" class="carta">
+                            </div>
+                            <div class="columna">
+                                <p><strong>TRIO (nombre):</strong> <span>3 puntos</span></p>
+                                <img src="imagenes/pareja1.png" alt="Pareja 1" class="carta">
+                                <img src="imagenes/pareja2.png" alt="Pareja 2" class="carta">
+                                <img src="imagenes/pareja3.png" alt="Pareja 3" class="carta">
+                            </div>
+                            <div class="columna">
+                                <p><strong>DOBLE PAREJA (nombre):</strong> <span>2 puntos</span></p>
+                                <img src="imagenes/pareja1.png" alt="Pareja 1" class="carta">
+                                <img src="imagenes/pareja2.png" alt="Pareja 2" class="carta">
+                                <img src="imagenes/pareja11.png" alt="Pareja 11" class="carta">
+                                <img src="imagenes/pareja22.png" alt="Pareja 22" class="carta">
+                            </div>
+                            <div class="columna">
+                                <p><strong>CUARTETO (nombre):</strong> <span>10 puntos</span></p>
+                                <img src="imagenes/pareja1.png" alt="Pareja 1" class="carta">
+                                <img src="imagenes/pareja2.png" alt="Pareja 2" class="carta">
+                                <img src="imagenes/pareja3.png" alt="Pareja 3" class="carta">
+                                <img src="imagenes/pareja4.png" alt="Pareja 4" class="carta">
+                            </div>
+                        </div>
+
+                        <div class="fila">
+                            <div class="columna">
+                                <p><strong>ESCALERA REFERENCIA (3):</strong> <span>6 puntos</span></p>
+                                <img src="imagenes/pareja1.png" alt="Pareja 1" class="carta">
+                                <img src="imagenes/pareja22.png" alt="Pareja 22" class="carta">
+                                <img src="imagenes/pareja2.png" alt="Pareja 2" class="carta">
+                            </div>
+                            <div class="columna">
+                                <p><strong>ESCALERA REFERENCIA (4):</strong> <span>8 puntos</span></p>
+                                <img src="imagenes/pareja11.png" alt="Pareja 11" class="carta">
+                                <img src="imagenes/pareja2.png" alt="Pareja 2" class="carta">
+                                <img src="imagenes/pareja33.png" alt="Pareja 33" class="carta">
+                                <img src="imagenes/pareja4.png" alt="Pareja 4" class="carta">
+                            </div>
+                            <div class="columna">
+                                <p><strong>ESCALERA COLOR (3):</strong> <span>10 puntos</span></p>
+                                <img src="imagenes/pareja1.png" alt="Pareja 1" class="carta">
+                                <img src="imagenes/pareja2.png" alt="Pareja 2" class="carta">
+                                <img src="imagenes/pareja3.png" alt="Pareja 3" class="carta">
+                            </div>
+                            <div class="columna">
+                                <p><strong>ESCALERA COLOR (4):</strong> <span>15 puntos</span></p>
+                                <img src="imagenes/pareja11.png" alt="Pareja 11" class="carta">
+                                <img src="imagenes/pareja22.png" alt="Pareja 22" class="carta">
+                                <img src="imagenes/pareja33.png" alt="Pareja 33" class="carta">
+                                <img src="imagenes/pareja44.png" alt="Pareja 44" class="carta">
+                            </div>
+                        </div>
+
+                        <div class="fila">
+                            <div class="columna">
+                                <p><strong>ESCALERA IMPERIAL:</strong> <span>+1/3 del valor de la escalera</span></p>
+                                <img src="imagenes/pareja1.png" alt="Pareja 1" class="carta">
+                                <img src="imagenes/pareja22.png" alt="Pareja 22" class="carta">
+                                <img src="imagenes/pareja3.png" alt="Pareja 3" class="carta">
+                                <img src="imagenes/pareja44.png" alt="Pareja 44" class="carta">
+                            </div>
+                            <div class="columna">
+                                <p><strong>ESCALERA ESTRELLAS (3):</strong> <span>15 puntos</span></p>
+                                <img src="imagenes/estrella11.png" alt="Estrella 11" class="carta">
+                                <img src="imagenes/estrella2.png" alt="Estrella 2" class="carta">
+                                <img src="imagenes/estrella333.png" alt="Estrella 333" class="carta">
+                            </div>
+                            <div class="columna">
+                                <p><strong>ESCALERA ESTRELLAS (4):</strong> <span>20 puntos</span></p>
+                                <img src="imagenes/estrella11.png" alt="Estrella 11" class="carta">
+                                <img src="imagenes/estrella2.png" alt="Estrella 2" class="carta">
+                                <img src="imagenes/estrella333.png" alt="Estrella 333" class="carta">
+                                <img src="imagenes/estrella4444.png" alt="Estrella 4444" class="carta">
+                            </div>
+                        </div>
+                    </div>
+                `,
+                showConfirmButton: true,
+                confirmButtonText: '¡OK!',
+                confirmButtonColor: '#00ff00',
+                background: 'transparent',
+                customClass: {
+                    popup: 'swal2-popup',
+                },
+                didOpen: () => {
+                    const popup = Swal.getPopup();
+                    const video = document.createElement('video');
+                    video.src = 'imagenes/fondo.mp4';
+                    video.autoplay = true;
+                    video.loop = true;
+                    video.muted = true;
+                    video.classList.add('swal2-background-video');
+                    popup.insertBefore(video, popup.firstChild);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

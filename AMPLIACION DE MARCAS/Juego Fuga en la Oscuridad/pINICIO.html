@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUGA EN LA OSCURIDAD</title>
+    <link rel="icon" href="img/Venezuela.ico" type="image/x-icon">
+
+   
+    <style>
+        /* Estilos para los botones */
+        .boton {
+            padding: 10px 20px; /* Espaciado interno alrededor del texto del botón */
+            background-color: #000000; /* Color de fondo negro para el botón */
+            color: white; /* Color blanco para el texto del botón */
+            text-decoration: none; /* Quita el subrayado del enlace */
+            border-radius: 0px; /* Bordes redondeados */
+            display: inline-block; /* Permite que el botón respete el padding y otros estilos */
+            margin: 5px; /* Espacio alrededor de cada botón para separarlos */
+        }
+
+        /* Contenedor para los botones */
+        .contenedor-botones {
+            display: flex; /* Utiliza Flexbox para organizar los elementos */
+            flex-direction: column; /* Apila los botones en columna */
+            align-items: center; /* Centra los botones horizontalmente */
+            margin-top: 20px; /* Espacio adicional en la parte superior */
+        }
+
+        /* Estilos para el encabezado dentro de los botones */
+        .boton h1 {
+            font-size: 2em; /* Tamaño de fuente del texto dentro del botón */
+            margin: 0; /* Elimina el margen predeterminado del encabezado */
+        }
+        
+.boton:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Agrega una sombra al pasar el cursor */
+    transition: box-shadow 0.3s ease;
+}
+.boton:hover {
+    transform: translateY(-5px); /* Mueve el botón hacia arriba 5px */
+    transition: transform 0.3s ease;
+}
+.boton:hover {
+    background-color: #444444; /* Cambia a un color gris oscuro al pasar el cursor */
+    transition: background-color 0.3s ease;
+}
+
+        
+    </style>
+</head>
+<body style="background-image: url(img/pINICIO.jpeg); background-size: cover;">
+    <h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: white; font-size: 950%; text-align: center;">
+        FUGA EN LA OSCURIDAD
+    </h1>
+
+    
+    <div class="contenedor-botones">
+        <a href="PAN1.html" class="boton"><h1>COMENZAR</h1></a>
+        <a  href="INSTRUCCIONES.html" class="boton"><h1>INSTRUCCIONES</h1></a>
+    </div>
+    <audio id="backgroundMusic" loop>
+        
+        <source src="audio/Horror.mp3" type="audio/mp3" loop>
+    </audio>
+
+    <script>
+        document.addEventListener('click', function() {
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            backgroundMusic.play();
+        }, { once: true });
+    </script>
+    
+    <h6 style="color: white; text-align: center;">Nota: En todas las pantallas, haz clic en cualquier lugar de la misma para reproducir el sonido ambiental.</h6>
+    <h4 style="color: white; text-align: center;"><h6 style="color: white; text-align: center;">M E C B ©</h6></h4>
+    
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

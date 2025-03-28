@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUGA EN LA OSCURIDAD</title>
+    <link rel="icon" href="img/Venezuela.ico" type="image/x-icon">
+    <style>
+        .boton {
+            padding: 10px 20px;
+            background-color: #000000;
+            color: white;
+            text-decoration: none;
+            border-radius: 0px;
+            display: inline-block;
+            margin: 10px;
+        }
+        .contenedor-botones {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            margin-top: 20px;
+        }
+        .boton h1 {
+            font-size: 1em;
+            margin: 0;
+        }
+        .boton:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Agrega una sombra al pasar el cursor */
+    transition: box-shadow 0.3s ease;
+}
+.boton:hover {
+    transform: translateY(-5px); /* Mueve el botón hacia arriba 5px */
+    transition: transform 0.3s ease;
+}
+.boton:hover {
+    background-color: #444444; /* Cambia a un color gris oscuro al pasar el cursor */
+    transition: background-color 0.3s ease;
+}
+    </style>
+</head>
+<body style="background-image: url(img/PAN2.jpeg); background-size: cover;">
+    <h2 style="color: white;" align="center">Decides que no puedes quedarte más tiempo. Abres la puerta y sales corriendo por la escalera de incendios. En el primer piso, escuchas disparos y el grito de una mujer. Las luces de un vehículo militar se acercan peligrosamente.<h2>
+   
+    
+    <div class="contenedor-botones">
+        <a href="PAN4.html" class="boton"><h1>Correr hacia el sótano del edificio</h1></a>
+        <a href="PAN5.html" class="boton"><h1>Esconderse en un callejón cercano</h1></a>
+    </div>
+    <audio id="backgroundMusic" loop>
+        <source src="audio/Horror.mp3" type="audio/mp3" loop>
+    </audio>
+
+    <script>
+        document.addEventListener('click', function() {
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            backgroundMusic.play();
+        }, { once: true });
+    </script>
+    
+    <h6 style="color: white; text-align: center;">Nota: En todas las pantallas, haz clic en cualquier lugar de la misma para reproducir el sonido ambiental.</h6>
+
+</body>
+</html>

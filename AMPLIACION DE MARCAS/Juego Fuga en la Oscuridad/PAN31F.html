@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINAL: La Captura</title>
+    <link rel="icon" href="img/Venezuela.ico" type="image/x-icon">
+    <style>
+        .boton {
+            padding: 10px 20px;
+            background-color: #000000;
+            color: white;
+            text-decoration: none;
+            border-radius: 0px;
+            display: inline-block;
+            margin: 10px;
+        }
+        .contenedor-botones {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            margin-top: 20px;
+        }
+        .boton h1 {
+            font-size: 1em;
+            margin: 0;
+        }
+        .boton:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Agrega una sombra al pasar el cursor */
+    transition: box-shadow 0.3s ease;
+}
+.boton:hover {
+    transform: translateY(-5px); /* Mueve el botón hacia arriba 5px */
+    transition: transform 0.3s ease;
+}
+.boton:hover {
+    background-color: #444444; /* Cambia a un color gris oscuro al pasar el cursor */
+    transition: background-color 0.3s ease;
+}
+    </style>
+</head>
+<body style="background-image: url(img/PAN7F.jpeg); background-size: cover;">
+    <h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: white; font-size: 500%; text-align: center;">
+        FINAL: La Captura
+    </h1>
+    <br>
+    <h2 style="color: white;" align="center">Mientras corres desesperadamente, una ráfaga de luces te envuelve. Los militares te rodean, sus rostros son máscaras de autoridad inquebrantable. Sientes el frío metal de las esposas mientras te arrastran hacia un vehículo blindado. A través de la ventana, ves cómo la ciudad se convierte en una prisión de sombras y miedo. Sabes que el régimen no muestra misericordia. Sin embargo, en lo profundo de tu ser, algo no se apaga: un deseo de resistir, un anhelo de libertad que ni siquiera las paredes de una celda podrán silenciar. Las sirenas resuenan, y te preguntas: ¿hasta cuándo soportarán todos el yugo? Quizás, algún día, alguien más fuerte terminará lo que tú no pudiste.<h2>
+   
+    
+    <div class="contenedor-botones">
+        <a href="pINICIO.html" class="boton"><h1>VOLVER AL INICIO</h1></a>
+    </div>
+    <audio id="backgroundMusic" loop>
+        <source src="audio/CAPTURA.mp3" type="audio/mp3" loop>
+    </audio>
+
+    <script>
+        document.addEventListener('click', function() {
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            backgroundMusic.play();
+        }, { once: true });
+    </script>
+    
+    <h6 style="color: white; text-align: center;">Nota: En todas las pantallas, haz clic en cualquier lugar de la misma para reproducir el sonido ambiental.</h6>
+
+</body>
+</html>

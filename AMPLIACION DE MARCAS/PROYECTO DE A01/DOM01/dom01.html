@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el número</title>
+</head>
+<body>
+    <h1>Adivina un número entre 1 y 100</h1>
+    <input type='number' id="miInput" placeholder="Escribe un número">
+    <button id="miBoton">Adivinar</button>
+    <p id="resultado"></p>
+    <p id="intentos">Intentos: 0</p>
+    <img id="imagen" src="imagenes/ghost.jfif">
+    <button id="miBoton2">Cambia!</button>
+    <button id="miBoton3">Suena</button>
+
+<script>
+
+    
+    const numeroOculto = Math.floor(Math.random() * 100) + 1;
+
+    const miInput = document.getElementById("miInput");
+    const miBoton = document.getElementById("miBoton");
+    const resultadoP = document.getElementById("resultado");
+    
+    const intentosP = document.getElementById("intentos");
+    let intentos = 0;
+
+    miBoton.addEventListener('click', ()=>{
+        const numeroInput = parseInt(miInput.value, 10);
+        intentos++;
+
+        intentosP.textContent = "Intentos: "+ intentos;
+
+        if (numeroOculto === numeroInput) {
+            resultadoP.textContent = "Enhorabuena! Acertaste en " + intentos +"intentos.";
+            resultadoP.style.color = "green";
+            if (intentos === 1) {
+                resultadoP.textContent += " Eres un dios!";
+            } else if (intentos >= 2 && intentos <= 4) {
+                resultadoP.textContent += " Eres grande!";
+            } else if (intentos >= 5 && intentos <= 8) {
+                resultadoP.textContent += " Eres del montón";
+            } else if (intentos > 8) {
+                resultadoP.textContent += " Eres un poco malillo";
+            }
+            miBoton.disabled = true; 
+        } else if (Math.abs(numeroOculto - numeroInput) < 3) {
+            resultadoP.textContent = "Quemando!";
+            resultadoP.style.color = "red";
+        } else if (Math.abs(numeroOculto - numeroInput) < 8) {
+            resultadoP.textContent = "Muy caliente!";
+            resultadoP.style.color = "orange";
+        } else if (Math.abs(numeroOculto - numeroInput) < 13) {
+            resultadoP.textContent = "Caliente!";
+            resultadoP.style.color = "yellow";
+        } else if (Math.abs(numeroOculto - numeroInput) < 18) {
+            resultadoP.textContent = "Templado";
+            resultadoP.style.color = "black";
+        } else if (Math.abs(numeroOculto - numeroInput) < 23) {
+            resultadoP.textContent = "Fresquibirís";
+            resultadoP.style.color = "green";
+        } else {
+            resultadoP.textContent = "Frío!";
+            resultadoP.style.color = "blue";
+        }
+    });
+
+    constmiBoton2.addEventListener('click', ()=>{
+        
+    })
+    miBoton3.addEventListener('click', ()=>{})
+</script>
+</body>
+</html>
